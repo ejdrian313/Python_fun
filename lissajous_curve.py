@@ -50,6 +50,8 @@ def welcome():
       Welcome to program drawing Lissajous curve!
     The best result you can reach is when "a" is 
     even and "b" is odd, but have fun with this!
+
+    (try a = 333 and b = 444 and numbers like this one)
                                             Ejdrian
     ''')
 
