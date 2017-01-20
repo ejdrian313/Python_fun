@@ -2,30 +2,32 @@ import csv
 
 
 def main():
-    a = input('Podaj nazwę pliku .csv do wczytania mapy: ')
-    loadMap(a)
+    a = input('Enter the name of file (without .csv) to make a map: ')
+    z = input('Enter the name of map you want to create (without .txt): ')
+    loadMap(a, z)
     
     
-def loadMap(name):
-    mapFile = open(name + '.csv')
+def loadMap(filename, mapname):
+    mapFile = open(filename + '.csv')
     mapReader = csv.reader(mapFile)
     
-    count = 1
-    new = open('maplevel1.txt', 'w')
+    count = 0
+    new = open(mapname + '.txt', 'w')
     for row in mapReader:
         for each in row:
             if each == '#':
                 new.write(each)
                 new.write(str(count))
                 count += 1
-            elif each == ',':
-                count += 1
+            elif each == ',':   #add more elif each == 'sign'
+                count += 1      #to add difrent stuff etc.
             else:
                 count +=1
         new.write('\n')
-        count = 1
+        count = 0
     new.close()
     mapFile.close()
 
-    
-main()
+
+if __name__ == "__main__":
+    main()
