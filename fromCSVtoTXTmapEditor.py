@@ -20,7 +20,7 @@ def loadMap(filename, mapname):
                 new.write(str(count))
                 count += 1
             elif each == ',':   #add more elif each == 'sign'
-                count += 1      #to add difrent stuff etc.
+                count += 1      #to add different stuff etc.
             else:
                 count +=1
         new.write('\n')
