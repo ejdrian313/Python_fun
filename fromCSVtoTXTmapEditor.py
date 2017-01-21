@@ -8,7 +8,12 @@ def main():
     
     
 def loadMap(filename, mapname):
-    mapFile = open(filename + '.csv')
+
+    try:
+        mapFile = open(filename + '.csv')
+    except IOError as err:
+        print("Error I/O error: {0}".format(err))
+
     mapReader = csv.reader(mapFile)
     
     count = 0
